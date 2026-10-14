@@ -1,3 +1,4 @@
+import { emitMetadataIndex } from './emit-metadata-index';
 /** Publish maintained React ESM/catalog inputs; no Markdown conversion occurs. */
 import { readFile, writeFile, mkdir, readdir, rm } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
@@ -31,6 +32,7 @@ for (const name of await readdir(maintained)) {
 }
 await changed(join(output, 'content-manifest.json'), JSON.stringify(manifest, null, 2) + '\n');
 await changed(join(output, 'content-metadata.json'), JSON.stringify(metadata, null, 2) + '\n');
+await emitMetadataIndex(output, metadata);
 const reachable = new Set(Object.values(manifest).map(url => basename(url)));
 for (const file of await readdir(join(output, 'content'))) if (!reachable.has(file)) await rm(join(output, 'content', file));
 console.log(`[maintained-content] ${Object.keys(manifest).length} React ESM articles and explicit projections; no Markdown renderer`);

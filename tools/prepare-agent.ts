@@ -1,3 +1,4 @@
+import { metadataIndexReady } from './emit-metadata-index';
 /** Rendered-source preparation: maintained React ESM/catalog, never Markdown compilation. */
 import { readFile, writeFile, mkdir, readdir, copyFile, rm } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
@@ -10,7 +11,7 @@ const hash = (bytes: string | Uint8Array) => createHash('sha256').update(bytes).
 const readJson = async (path: string, fallback: any) => JSON.parse(await readFile(path, 'utf8').catch(() => JSON.stringify(fallback)));
 const statePath = join(generated, 'pipeline-state.json');
 const state = await readJson(statePath, {});
-const env = { ...process.env, RAYON_NUM_THREADS: process.env.RAYON_NUM_THREADS ?? '4', NODE_OPTIONS: process.env.NODE_OPTIONS ?? '--max-old-space-size=512', VITE_DOCS_REGION: process.env.VITE_DOCS_REGION ?? 'global', SITE_URL: process.env.SITE_URL ?? 'https://docs.agora.io', VITE_SEARCH_RANKING_V2: process.env.VITE_SEARCH_RANKING_V2 ?? 'true', TSS_STATIC_PRERENDER: 'true', VITE_TSS_SPA_STATIC_EXPERIMENT: 'true', NIFT_SEPARATE_CONTENT: 'true', NIFT_CONTENT_ROOT: join(app, 'public'), TSS_CLIENT_OUTPUT_DIR: join(app, 'public'), DOCS_DEV_SCOPE: '', TSS_PRERENDER_PATHS: '' };
+const env = { ...process.env, RAYON_NUM_THREADS: process.env.RAYON_NUM_THREADS ?? '4', NODE_OPTIONS: process.env.NODE_OPTIONS ?? '--max-old-space-size=512', VITE_DOCS_REGION: process.env.VITE_DOCS_REGION ?? 'global', SITE_URL: process.env.SITE_URL ?? 'https://docs.agora.io', VITE_SITE_URL: process.env.SITE_URL ?? 'https://docs.agora.io', VITE_SEARCH_RANKING_V2: process.env.VITE_SEARCH_RANKING_V2 ?? 'true', TSS_STATIC_PRERENDER: 'true', VITE_TSS_SPA_STATIC_EXPERIMENT: 'true', NIFT_SEPARATE_CONTENT: 'true', NIFT_CONTENT_ROOT: join(app, 'public'), TSS_CLIENT_OUTPUT_DIR: join(app, 'public'), DOCS_DEV_SCOPE: '', TSS_PRERENDER_PATHS: '' };
 if (env.VITE_DOCS_REGION === 'cn' && !process.env.SITE_URL) throw new Error('CN publication requires its explicit SITE_URL');
 const bun = process.execPath;
 const force = process.argv.includes('--all');
@@ -36,7 +37,7 @@ async function signature(paths: string[]) {
 const sourceFiles = [...await files(join(root,'maintained')), ...await files(join(app,'content')), join(app,'bun.lock'), ...await files(join(root,'tools'))].filter(p => !p.endsWith('.pyc'));
 const contentSignature = await signature(sourceFiles);
 const manifestPath = join(app,'public/__nift/content-manifest.json');
-let contentChanged = contentSignature !== state.contentSignature || !await Bun.file(manifestPath).exists();
+let contentChanged = contentSignature !== state.contentSignature || !await Bun.file(manifestPath).exists() || !await metadataIndexReady(join(app,'public/__nift'));
 if (contentChanged) await run('maintained-content', ['tools/publish-maintained-content.ts']);
 const appFiles = [...await files(join(app,'src')), join(app,'vite.config.ts'), join(app,'tsconfig.json'), join(app,'package.json'), join(app,'bun.lock')].filter(p => !/\.(test|spec)\.[^.]+$/.test(p) && !p.endsWith('routeTree.gen.ts') && !p.includes('/src/test/'));
 const envSignature = hash(JSON.stringify(Object.entries(env).filter(([key]) => key.startsWith('VITE_') || key === 'SITE_URL').sort()));

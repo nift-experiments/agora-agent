@@ -58,3 +58,5 @@ Root `vercel.json` preserves all upstream redirect, conditional-route and bulk-r
 Raw benchmark logs, screenshots and frozen references belong in canonical evidence storage outside this source repository. Complete pipeline accounting, serialized observations, aggregate process-tree RSS, output correctness and independent clean-clone certification remain required. No final benchmark numbers or Labs publication are approved here.
 
 The pinned three-page projection fallback is documented in [tools/PROJECTION-COMPATIBILITY.md](tools/PROJECTION-COMPATIBILITY.md). It preserves upstream downloads and payload metadata without disabling the working browser article modules.
+
+Compiler/projection metadata has a compact frontmatter index and lazily loaded per-document files for server rendering. These are derived private artifacts, not another maintained source model. The complete catalog remains authoritative for projection conversion. Renderer workers use production React; bounded process lifetimes prevent unbounded module retention.
