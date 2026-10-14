@@ -314,6 +314,14 @@ Then read feature documentation only when the task requires it, for example:
 
 Prefer documented Nift behaviour and the existing project structure over guessing based on another website generator or framework.
 
-## Agora checkpoint 1 — 2026-10-15
+## Agora agent implementation checkpoint — 2026-10-15
 
-Official migration initialization completed. Read UPSTREAM.md, investigation/BASELINE.md and STATUS.md. Baseline source is pinned full history; reference source remains untouched and builds use a disposable separate checkout. Bun exists at /home/nick/.bun/bin/bun but was outside PATH; scripts must resolve the frozen toolchain explicitly. Independent read-only architecture and measurement reviews identified static-payload/Router seams, extra Vite work in generators, split global/CN publications and aggregate RSS requirements. No ported content or performance claim yet. Continue baseline before major implementation.
+Read README.md, UPSTREAM.md, investigation/STATUS.md and tools/RENDERED-SOURCE.md. This source model maintains React ESM, explicit metadata/text projections and runtime bridges under maintained/__nift. It retains TanStack Start/Router/React and shared application components; it does not reduce the portal to static HTML or run an MDX compiler during normal publication.
+
+Use root `bun run install:app`, `bun run build`, `bun run build:full` and `bun run serve`. Publication is root public/; static preview runs on 4191. Active preparation is tools/prepare-agent.ts. Preserve maintained/ across fresh-state cache resets, and coordinate article/catalog/navigation changes. Generated app/public, app/dist, .generated and root public are rebuildable products, not maintained inputs. Normal build/serve must work without sibling agora or baseline directories.
+
+The immutable app/src/generated/docs-last-updated-manifest.ts preserves upstream Git-derived dates; never regenerate it from migration import commits or build time. Runtime globals initialize before article ESM loading and share React/component instances across SSR/browser. Vite still builds the app; Nift composes prepared publication inputs. Root Vercel redirect/content-negotiation rules remain part of the publication contract; the hosting build image must supply Nift. Python preview does not emulate deployment routing.
+
+Representative retained application behavior has been exercised, but complete output parity, changed-input certification, separate CN configuration, independent clean clones and final serialized measurements are open. Preserve external CDN/Algolia/Orama qualifications and use aggregate process-tree RSS. Do not expose development observations as final public benchmark numbers.
+
+No Nift core/Labs/unrelated repository edits. Keep raw evidence outside source repositories. No completion or success claim until certification and reproducibility gates are finished.
