@@ -327,3 +327,7 @@ Representative retained application behavior has been exercised, but complete ou
 No Nift core/Labs/unrelated repository edits. Keep raw evidence outside source repositories. No completion or success claim until certification and reproducibility gates are finished.
 
 Fresh-clone asset correction (2026-10-15): anchored the root output ignore rule (`/public/`) so maintained `app/public` files remain source inputs. All 18 newly tracked static files match pinned upstream bytes. Corrected clean-clone certification is pending; previous incomplete-scope captures remain private diagnostic evidence.
+
+## Final implementation checkpoint
+
+Global clean-clone corpus gates pass; see investigation/STATUS.md for current certification and explicit remaining qualifications. Earlier pending notes are historical. The payload updater loads expensive worker/source modules only for dirty conversion or fallback. All performance evidence remains outside the public source repository. No Labs publication is authorized.

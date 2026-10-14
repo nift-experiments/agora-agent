@@ -1,30 +1,24 @@
-# Agora checkpoint ledger — maintained React source
+# Agora final implementation checkpoint — agora-agent
 
-Current state: the independent agent-oriented Nift/TanStack implementation is under certification. The experiment is **not complete**; no development measurement is a final public benchmark.
+Global source-model implementation and independent clean-clone corpus certification are complete. This is an engineering checkpoint, not a Labs publication or an unqualified production deployment claim.
 
-1. Setup: official `nift init --migration`, exact provenance and Apache licensing retained.
-2. Reconnaissance: upstream full-history reference pinned to `3c6552914e6cec74ab5d9c38b3bd4eeb51871d13`; English/Chinese routes, navigation, OpenAPI and external service boundaries mapped.
-3. Baseline: complete unchanged upstream production build reproduced; final serialized benchmark campaign acceptance is pending. Mandatory aggregate process-tree RSS remains distinct from individual-process RSS.
-4. Architecture: maintained React ESM articles and explicit catalog/manifest, semantic payload/search/Markdown/LLM derivation, retained TanStack Start/Router/React application bundle and SSR, then Nift composition. This is not an HTML-only snapshot.
-5. Authored model: independently maintained in sibling `agora`. Neither its sources nor generated directories are runtime dependencies of this repository's normal build.
-6. Agent implementation: `maintained/__nift` is the authoritative article/catalog/bridge source. Structured navigation/OpenAPI and the application remain maintained under `app`. `tools/prepare-agent.ts` publishes this source model without routine Markdown/MDX compilation. Full certification is ongoing.
-7. Certification/benchmarking: ongoing. Retained application behavior has representative SSR/hydration/navigation/search/tab proofs; final source-model parity, changed-input lifecycles, hosting, regional boundaries, serialized samples and independent clean clones remain required.
-8. Report preparation: future experiment material only. No Labs deployment or public announcement is authorized.
+- Pinned upstream: `3c6552914e6cec74ab5d9c38b3bd4eeb51871d13`.
+- Both source models preserve 1,657 article identities, the complete 2,017 reference HTML paths (including fallback/alias/verification paths), and all 3,100 non-HTML non-bundle reference paths.
+- Canonical document payload fields, Markdown bytes and LLM block content match the frozen reference. Search row and LLM block order vary in upstream; those differences are reported explicitly.
+- All 1,657 compiled article modules match across models. Source models intentionally differ; application JavaScript and content-addressed bundle layout are not upstream byte identities.
+- Independent GitHub clones reproduced the global publication. Warm/restored output retains exact non-HTML bytes and exact HTML after comparison-only normalization of TanStack Router bootstrap timestamps. Production timestamps are untouched.
+- Root normal build and `nift status` pass. TypeScript checks pass. Authored incremental/full projection equivalence passes. Representative hydration, search/navigation/history, API controls, code tabs, FAQ filtering, theme controls and narrow-screen drawer behavior were exercised.
+- Full upstream-derived unit suite is not green: inherited source/dependency/environment failures remain recorded in external certification evidence. No source content was altered merely to satisfy stale assertions.
+- Retained TanStack Start/Router, React, hydration and client navigation remain meaningful parts of the application. Nift composes prepared raw HTML with explicit dependencies; this is not native `@markup` performance.
 
-Root commands: `bun run install:app`, `bun run build`, `bun run build:full`, `bun run serve`. Output: root `public/`; preview: `http://127.0.0.1:4191/`.
+## Focused prior-experiment review
 
-Ownership: never remove `maintained/` during cache resets. Article edits coordinate React ESM, catalog projections and any manifest/navigation changes. Preserve the immutable upstream date seed; update editorial dates explicitly. Read tools/RENDERED-SOURCE.md before editing content.
+Reviewed local Capgo/Docker implementation and Deno/SpaceX report sources, plus SpaceX's public maintained-asset acquisition code. Reused content fingerprints, lazy expensive initialization, bounded workers, stable cached projections and separation of maintained assets from routine generation. Both payload updaters now defer their worker/source graph import until a dirty module or full fallback requires it. Do not adopt another project's static runtime model without proving TanStack parity.
 
-Next: certify complete publication and incremental/forced correctness, external service/CDN/CN qualifications and independent fresh clones, then run the serialized final campaign. Keep raw evidence external and preserve all limitations. No Nift core, unrelated repository or Labs changes.
+## Remaining qualifications and recommendation
 
-## Integration checkpoint
+**NEEDS FURTHER WORK before public promotion.** Complete CN production publication requires its explicit intended origin/configuration and separate regional certification. Hosting rules are retained but an actual deployment build image must provide Nift; the local Python preview does not emulate redirects or content negotiation. Private Algolia indexing and live service/API writes were not performed. CDN assets remain original external references. See KNOWN-DIVERGENCES.md.
 
-Full global agent integration produced all 2,017 reference HTML paths and every non-bundle file category. Both models retain 1,657 logical authored-article identities, 997 canonical page payloads, and 2,126 machine-readable generator outputs. Replacement/deduplicated JavaScript modules intentionally change total file counts.
+The small serialized campaign is preserved privately, including superseded incomplete-scope observations and the corrected capture. No additional upstream builds or prior-experiment benchmarks were run. No Nift core, Labs or previous migration source was modified. No announcement or maintainer contact is authorized.
 
-Authored incremental/full payload equivalence compared 3,066 unique derived outputs with zero differences; restoration reproduced original hashes. The three-page projection compatibility rule preserves exact frozen metadata/downloads. The 1,049 LLM blocks retain identical content; source enumeration order is not stable upstream.
-
-TypeScript passes in both models. Focused loader/direct-render checks pass except one stale IoT route assertion also failing in pinned source. The full authored unit run exposed inherited source/dependency/environment failures, recorded in external certification evidence rather than hidden by changing pinned content. Metadata access across all 1,657 entries does not initialize article runtime.
-
-Fresh-checkout reproduction, final publication accounting, representative browser certification and the small final measurement set remain pending. No completion or public performance claim is made by this checkpoint.
-
-Fresh-clone asset correction (2026-10-15): anchored the root output ignore rule (`/public/`) so maintained `app/public` files remain source inputs. All 18 newly tracked static files match pinned upstream bytes. Corrected clean-clone certification is pending; previous incomplete-scope captures remain private diagnostic evidence.
+Root commands: `bun run install:app`, `bun run build`, `bun run build:full`, `bun run serve`. Root `public/` is the publication. Follow README/HANDOVER and preserve the explicit editorial-date workflow.

@@ -1,6 +1,6 @@
 # Agora documentation: Nift + TanStack, maintained React content
 
-This independent agent-oriented experiment retains Agora's TanStack Start/Router, React and Fumadocs application while maintaining already compiled React article modules and an explicit catalog. It is under implementation and certification; no final performance or complete-parity claim is made here.
+This independent agent-oriented experiment retains Agora's TanStack Start/Router, React and Fumadocs application while maintaining already compiled React article modules and an explicit catalog. The global implementation reproduces the complete reference route and non-bundle publication scope from clean GitHub clones. Regional deployment and external-service qualifications remain explicit below.
 
 Upstream source is [AgoraIO/docs-portal](https://github.com/AgoraIO/docs-portal), pinned to `3c6552914e6cec74ab5d9c38b3bd4eeb51871d13`. Apache 2.0 attribution and licensing are retained. See [UPSTREAM.md](UPSTREAM.md), [MIGRATION.md](MIGRATION.md), [HANDOVER.md](HANDOVER.md) and [investigation/STATUS.md](investigation/STATUS.md).
 
